@@ -6,8 +6,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on
 
-" set line number 
+" set line number as relative as well as absolute
 set nu
+set rnu
 
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Linux"
@@ -69,4 +70,6 @@ set synmaxcol=900
 " set fold method to syntax
 set fdm=syntax
 
+" set case insensitive search
+set ignorecase
 "}}}

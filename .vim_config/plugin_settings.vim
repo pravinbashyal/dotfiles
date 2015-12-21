@@ -8,20 +8,14 @@
 let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
 
-" NERDTree Options
-" Toggle NERDTree with ctrl + n
-map <C-n> :NERDTreeToggle<CR>
-" Open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " vim-airline configuration
+
 set laststatus=2 "enable status line
 let g:airline#extensions#tabline#enabled = 1 "enable powerline fonts 
 let g:airline_powerline_fonts = 1 "enable powerline fonts
 let g:airline#extensions#tagbar#enabled = 0 "speeds up the load time by disabling tagbar integration
-let g:airline#extensions#tabline#fnamemod = ':p.'
-let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnamemod = ':.'
+let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1 "show buffer number in tabline
 let g:airline#extensions#tabline#buffer_idx_mode = 1 "show buffer index on tabline
 " maps for switching between buffers
@@ -34,6 +28,7 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
+
 
 " Emmet Options
 " Enabling just for html and css
@@ -103,4 +98,8 @@ set completeopt-=preview
   " Don't jump to already open window. This is annoying if you are maintaining
   " several Tab workspaces and want to open two windows into the same file.
   let g:ctrlp_switch_buffer = 0
+
+  "Vim HARD MODE Settings
+  "enables hard mode by default
+  autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 "}}}

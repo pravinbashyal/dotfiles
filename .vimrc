@@ -10,7 +10,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " closing quotes and brackets
-Plugin 'Raimondi/delimitMate'
+" Plugin 'Raimondi/delimitMate'
+" lexima replacement for deliMate
+Plugin 'cohama/lexima.vim'
 
 " javascript plugins
 Plugin 'pangloss/vim-javascript'
@@ -63,14 +65,27 @@ Plugin 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
 " Ag for vim
 Plugin 'rking/ag.vim'
 
+" tcomment for vim
+Plugin 'tomtom/tcomment_vim'
+
+" smooth scroll plugin
+Plugin 'terryma/vim-smooth-scroll'
+
+" VIM Hard mode disable all micro movment and bunch of other stuffs
+Plugin 'wikitopian/hardmode'
+
 " base16 colorschemes
 Plugin 'chriskempson/base16-vim'
 
 " fukurokujopro colorscheme
 Bundle 'nemesit/vim-colors-fukurokujopro'
 
+" gruvbox colorscheme
+Plugin 'morhetz/gruvbox'
+
 " Solorazied theme
 Plugin 'altercation/vim-colors-solarized'
+
 
 " --------------------------------------------------------------
 call vundle#end()            " required
