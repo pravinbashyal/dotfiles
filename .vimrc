@@ -3,92 +3,116 @@ source ~/.vim_config/keymap.vim
 
 " All Plugins {{{
 " "========================================================
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" ---------------------------------------------------------
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-" closing quotes and brackets
-" Plugin 'Raimondi/delimitMate'
 " lexima replacement for deliMate
-Plugin 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim'
 
-" javascript plugins
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'othree/yajs.vim'
+" javascript Plugs
+Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
 
 " jsx indentation and highlight
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
+
+" Window-swap plugin
+Plug 'wesQ3/vim-windowswap'
+
+" eighties-vim
+Plug 'justincampbell/vim-eighties'
 
 " vim-airline
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " highlight ending html tag when pointing to the start
-Plugin 'gregsexton/MatchTag'
+Plug 'gregsexton/MatchTag'
 
-" NerdTree plugin
-Plugin 'scrooloose/nerdtree'
+" NerdTree Plug
+Plug 'scrooloose/nerdtree'
 
-" Emmet.vim plugin for i don't know expanding html tags i guess
+" Emmet.vim Plug for i don't know expanding html tags i guess
 " i want to use it for sniplet of html structure
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
-" tmuxline plugin
-Bundle 'edkolev/tmuxline.vim'
+" tmuxline Plug
+Plug 'edkolev/tmuxline.vim'
 
 " Seamless switch between vim and tmux splits
-Bundle 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " fugitive
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
+" fzf async replacement of ctrlP
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ 
 " CtrlP
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
+
+" CtrlP-funky ctrlp for finding function calls
+Plug 'tacahiroy/ctrlp-funky'
 
 " gundo for visual undo
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 
 " goyo distraction free coding
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 
 " neocomplete completion
-Plugin 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 
 " vimproc used by neocomplete
-Plugin 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim'
 
 " tern for vim
-Plugin 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
+Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
 
 " Ag for vim
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 
 " tcomment for vim
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
-" smooth scroll plugin
-Plugin 'terryma/vim-smooth-scroll'
+" smooth scroll Plug
+Plug 'terryma/vim-smooth-scroll'
 
 " VIM Hard mode disable all micro movment and bunch of other stuffs
-Plugin 'wikitopian/hardmode'
+" Plug 'wikitopian/hardmode'
+
+" Vim lib syntax
+Plug 'othree/javascript-libraries-syntax.vim'
+
+" HTML5 Plug
+Plug 'othree/html5.vim'
+
+" matchit
+Plug 'tmhedberg/matchit'
+
+" vim surround
+Plug 'tpope/vim-surround'
 
 " base16 colorschemes
-Plugin 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 
 " fukurokujopro colorscheme
-Bundle 'nemesit/vim-colors-fukurokujopro'
+Plug 'nemesit/vim-colors-fukurokujopro'
 
 " gruvbox colorscheme
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " Solorazied theme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
+
+" dracula theme
+Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
+" Hybrib material theme
+Plug 'kristijanhusak/vim-hybrid-material'
 
 
 " --------------------------------------------------------------
-call vundle#end()            " required
+"call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 filetype on
 " ==============================================================
@@ -98,7 +122,5 @@ filetype on
 source ~/.vim_config/general.vim
 source ~/.vim_config/style.vim
 source ~/.vim_config/plugin_settings.vim
-
-
 
 " vim:foldmethod=marker:foldlevel=0

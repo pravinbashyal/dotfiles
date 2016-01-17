@@ -15,6 +15,10 @@ if os == "Linux"
   let base16colorspace=256
 endif
 
+" set undofile for undo persistance when navigating between buffers
+set undofile
+set undodir=$HOME/.vim/undo
+
 " set right side column
 set colorcolumn=100
 
@@ -72,4 +76,5 @@ set fdm=syntax
 
 " set case insensitive search
 set ignorecase
+
 "}}}

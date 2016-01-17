@@ -61,6 +61,7 @@ plugins=(fasd)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/opt/local/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,3 +115,5 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # ctrl + r in vim mode in shell
 bindkey '^r' history-incremental-search-backward
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

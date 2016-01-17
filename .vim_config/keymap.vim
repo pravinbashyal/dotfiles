@@ -43,4 +43,18 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
 
+" nerdtree mapping
+map <C-n> :NERDTreeToggle<CR>
+
+" Fugitive mapping
+" map Gstatus
+noremap <leader>gs :Gstatus<CR>
+
+" Ctrlp-funky mappings
+nnoremap <Leader>p :CtrlPFunky<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+
+" fzf mapping
+noremap <C-p> :FZF<CR>
+
 "}}}
