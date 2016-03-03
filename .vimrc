@@ -10,7 +10,7 @@ Plug 'cohama/lexima.vim'
 
 " javascript Plugs
 Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
+" Plug 'othree/yajs.vim'
 
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
@@ -23,6 +23,7 @@ Plug 'justincampbell/vim-eighties'
 
 " vim-airline
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " highlight ending html tag when pointing to the start
 Plug 'gregsexton/MatchTag'
@@ -32,20 +33,20 @@ Plug 'scrooloose/nerdtree'
 
 " Emmet.vim Plug for i don't know expanding html tags i guess
 " i want to use it for sniplet of html structure
-Plug 'mattn/emmet-vim'
+ Plug 'mattn/emmet-vim'
 
 " tmuxline Plug
 Plug 'edkolev/tmuxline.vim'
 
-" Seamless switch between vim and tmux splits
+ " Seamless switch between vim and tmux splits
 Plug 'christoomey/vim-tmux-navigator'
 
 " fugitive
 Plug 'tpope/vim-fugitive'
 
 " fzf async replacement of ctrlP
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
- 
+ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  
 " CtrlP
 Plug 'kien/ctrlp.vim'
 
@@ -58,7 +59,10 @@ Plug 'sjl/gundo.vim'
 " goyo distraction free coding
 Plug 'junegunn/goyo.vim'
 
-" neocomplete completion
+" deoplete completion
+Plug 'Shougo/deoplete.nvim'
+
+" neocomplete 
 Plug 'Shougo/neocomplete.vim'
 
 " vimproc used by neocomplete
@@ -80,16 +84,19 @@ Plug 'terryma/vim-smooth-scroll'
 " Plug 'wikitopian/hardmode'
 
 " Vim lib syntax
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 
 " HTML5 Plug
-Plug 'othree/html5.vim'
+" Plug 'othree/html5.vim'
 
 " matchit
 Plug 'tmhedberg/matchit'
 
 " vim surround
 Plug 'tpope/vim-surround'
+
+" syntastic
+Plug 'scrooloose/syntastic'
 
 " base16 colorschemes
 Plug 'chriskempson/base16-vim'
@@ -111,7 +118,6 @@ Plug 'kristijanhusak/vim-hybrid-material'
 
 
 " --------------------------------------------------------------
-"call vundle#end()            " required
 call plug#end()
 filetype plugin indent on    " required
 filetype on

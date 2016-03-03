@@ -81,39 +81,74 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias vi="mvim -v"
-# alias vim="mvim -v"
-alias vi="vim"
+
+# ======================================================================
+# ===================     ALIASES     ==================================
+# ======================================================================
+
+# ============
+# vim aliases
+# ============
+alias vi="nvim"
+alias vim="nvim"
+# ============
+
+# ============
+# tmux aliases
+# ============
 alias tmux="tmux -2"
+# ============
+
+# ============
+# others
+# ============
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias lh="ls -d .*"
-
-# get ip adress
 alias ip="ifconfig | grep 192"
+eval "$(thefuck-alias)"
+eval "$(thefuck-alias FUCK)"
+# ============
+
+# ============
+# git aliases
+# ============
+alias g="git"
+alias gs="git status"
+alias gb="git branch"
+alias gbr="git branch -r"
+alias gl="git l"
+# ============
+
+# ============
+# react-native aliases
+# ============
+alias rn5='react-native run-ios --simulator="iPhone 5"'
+alias rn5s='react-native run-ios --simulator="iPhone 5s"'
+alias rn6='react-native run-ios'
+alias rn6s='react-native run-ios --simulator="iPhone 6s"'
+# ============
+
+# ======================================================================
+# ===================     ALIASES-END     ==============================
+# ======================================================================
 
 # set VI mode
 set -o vi
 
-eval "$(thefuck-alias)"
-# You can use whatever you want as an alias, like for Mondays:
-eval "$(thefuck-alias FUCK)"
-#
+# 10ms timeout for key sequences
+KEYTIMEOUT=1
+
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.bin/tmuxinator.zsh
-export EDITOR=vim
+export EDITOR=nvim
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # ctrl + r in vim mode in shell
 bindkey '^r' history-incremental-search-backward
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="/Users/aakashsigdel/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

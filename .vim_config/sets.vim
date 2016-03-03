@@ -34,14 +34,11 @@ set shiftround
 " Indent to correct location with tab
 set smarttab
 
-" turnon autoindent
-set autoindent
-
 " copy the indentation of previous line if autoindent doesn't know what to do
 set copyindent
 
-" retain indentation on the next line
-set smartindent
+" indent as file type
+filetype plugin indent on
 
 " enable search Highlighting
 set hlsearch
@@ -54,9 +51,6 @@ set wildmenu
 
 " redraw only when needed; makes vim faster
 set lazyredraw
-
-"set notimeout
-set timeout timeoutlen=1000 ttimeoutlen=100
 
 " open all folds on start
 set foldlevelstart=99
@@ -76,5 +70,15 @@ set fdm=syntax
 
 " set case insensitive search
 set ignorecase
+set smartcase
+
+" set sane timeouts
+" set notimeout
+" set ttimeout
+" set ttimeoutlen=10
+set timeoutlen=1000 ttimeoutlen=0
+
+" spell check
+setlocal spell spelllang=en_us
 
 "}}}
