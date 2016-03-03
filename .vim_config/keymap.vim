@@ -32,7 +32,7 @@ nnoremap gp `[v`]
 "noremap <F5>:syntax sync fromstart<CR>
 
 " toggle vim hard mode
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+" nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " source vimrc
 noremap <F5> :source $MYVIMRC<CR>
@@ -44,7 +44,10 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
 
 " nerdtree mapping
-map <C-n> :NERDTreeToggle<CR>
+map <leader><CR> :NERDTreeToggle<CR>
+
+" synstastic mapping
+map <leader>c :SyntasticCheck<CR>
 
 " Fugitive mapping
 " map Gstatus
@@ -56,5 +59,8 @@ let g:ctrlp_funky_syntax_highlight = 1
 
 " fzf mapping
 noremap <C-p> :FZF<CR>
+
+" fix for iterm under mac
+nnoremap <BS> :TmuxNavigateLeft<CR>
 
 "}}}

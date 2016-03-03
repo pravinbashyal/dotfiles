@@ -29,43 +29,31 @@
   autocmd FileType html,css,js EmmetInstall
 "}}}
 
-"Neocomplete options {{{
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_auto_delimiter = 1
-  let g:neocomplete#enable_auto_select = 0
-  let g:neocomplete#enable_fuzzy_completion = 1
-  let g:neocomplete#enable_smart_case = 1
-  let g:neocomplete#force_overwrite_completefunc = 1
-  let g:neocomplete#max_list = 10
-  let g:neocomplete#use_vimproc = 1
-  let g:neocomplete_enable_camel_case_completion = 0
-  let g:neocomplete_enable_fuzzy_completion_start_length = 2
+" Deoplete Settings {{{
+  let g:deoplete#enable_at_startup=0
+  let g:deoplete#max_list=10
+  let g:deoplete#auto_completion_start_length=2
+  let g:deoplete#enable_smart_case=1
+  let g:deoplete#file#enable_buffer_path=1
 
-  " Fix the omnicompletion for NeoComplete with force.
-  if !exists('g:neocomplcache_force_omni_patterns')
-      let g:neocomplcache_force_omni_patterns = {}
+  " Manually trigger tag autocomplete
+  inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  "<BS>: close popup and delete backword char.
+  inoremap <expr><BS> deoplete#mappings#close_popup()."\<C-h>"
+
+  " omni completion for different file extensions
+  au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  au FileType javascriptx setl omnifunc=tern#Complete
+
+  if !exists('g:deoplete#omni_patterns')
+    let g:deoplete#omni_patterns = {}
   endif
 
-  " <TAB>: completion.
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-  let g:neocomplete#sources#vim#complete_functions = {
-          \     'Unite': 'unite#complete_source',
-          \     'VimShell': 'vimshell#complete',
-          \     'VimFiler': 'vimfiler#complete',
-          \ }
-  call neocomplete#custom#source('ultisnips', 'rank', 500)
-  " Enable omni completion.
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-  " Disable the neosnippet preview candidate window. Or it will ruin your overview, especially when splits are used. 
+  " disable the documentation buffer
   set completeopt-=preview
-"}}}
+" }}}
 
 "CtrlP settings {{{
   if exists("g:ctrlp_user_command")
@@ -95,10 +83,6 @@
 
 " NerdTree settings {{{
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-  " vim-javascript-library-syntax settings
-  let g:used_javascript_libs = 'React,AngularJS,AngularUI,'
-
 "}}}
 
 "vim-windowswap settings {{{
@@ -108,12 +92,21 @@
   nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
 "}}}
 
-" vim-eighties settings {{{
-  let g:eighties_enabled = 1
-  let g:eighties_minimum_width = 80
-  let g:eighties_extra_width = 0 " Increase this if you want some extra room
-  let g:eighties_compute = 1 " Disable this if you just want the minimum + extra
-  let g:eighties_bufname_additional_patterns = ['fugitiveblame'] " Defaults to [], 'fugitiveblame' is only an example. Takes a comma delimited list of bufnames as strings.
+" fugitive.vim {{{
+  set diffopt+=vertical
+" }}}
+
+" syntastic Settings {{{
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_javascript_checkers = ['standard']
+  let g:syntastic_mode_map = {
+        \ "mode": "passive" }
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
