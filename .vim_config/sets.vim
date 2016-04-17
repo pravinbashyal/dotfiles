@@ -66,7 +66,7 @@ syntax sync maxlines=240
 set synmaxcol=900
 
 " set fold method to syntax
-set fdm=syntax
+set fdm=indent
 
 " set case insensitive search
 set ignorecase

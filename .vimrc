@@ -41,6 +41,13 @@ Plug 'edkolev/tmuxline.vim'
  " Seamless switch between vim and tmux splits
 Plug 'christoomey/vim-tmux-navigator'
 
+" SnipMate
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'tomtom/tlib_vim'
+  Plug 'garbas/vim-snipmate'
+
+  Plug 'honza/vim-snippets'
+
 " fugitive
 Plug 'tpope/vim-fugitive'
 
@@ -59,14 +66,11 @@ Plug 'sjl/gundo.vim'
 " goyo distraction free coding
 Plug 'junegunn/goyo.vim'
 
-" deoplete completion
-Plug 'Shougo/deoplete.nvim'
-
-" neocomplete 
-Plug 'Shougo/neocomplete.vim'
-
 " vimproc used by neocomplete
 Plug 'Shougo/vimproc.vim'
+
+" youcompleteme
+Plug 'Valloric/YouCompleteMe'
 
 " tern for vim
 Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }

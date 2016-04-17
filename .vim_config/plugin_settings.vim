@@ -29,32 +29,6 @@
   autocmd FileType html,css,js EmmetInstall
 "}}}
 
-" Deoplete Settings {{{
-  let g:deoplete#enable_at_startup=0
-  let g:deoplete#max_list=10
-  let g:deoplete#auto_completion_start_length=2
-  let g:deoplete#enable_smart_case=1
-  let g:deoplete#file#enable_buffer_path=1
-
-  " Manually trigger tag autocomplete
-  inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  "<BS>: close popup and delete backword char.
-  inoremap <expr><BS> deoplete#mappings#close_popup()."\<C-h>"
-
-  " omni completion for different file extensions
-  au FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  au FileType javascriptx setl omnifunc=tern#Complete
-
-  if !exists('g:deoplete#omni_patterns')
-    let g:deoplete#omni_patterns = {}
-  endif
-
-  " disable the documentation buffer
-  set completeopt-=preview
-" }}}
-
 "CtrlP settings {{{
   if exists("g:ctrlp_user_command")
     unlet g:ctrlp_user_command
@@ -108,5 +82,20 @@
   let g:syntastic_mode_map = {
         \ "mode": "passive" }
 " }}}
+
+" tern settings {{{
+  let g:tern_map_keys=1
+  let g:tern_show_argument_hints='on_hold'
+" }}}
+
+" snipmate settings {{{
+  "to prevent clash with youcompleteme, change snippet trigger
+  imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+  smap <C-J> <Plug>snipMateNextOrTrigger
+" }}}
+
+" YouCompeleteMe settings {{{
+  set completeopt-=preview
+"}}}
 
 " vim:foldmethod=marker:foldlevel=0

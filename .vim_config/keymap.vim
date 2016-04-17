@@ -10,7 +10,7 @@ noremap k gk
 nnoremap <leader>n :nohlsearch<CR>
 
 " spaec open/closes fold
-nnoremap <space><space> za
+nnoremap <space> za
 
 " toggle gundo <leader> u because it is a super undo :P
 nnoremap <leader>u :GundoToggle<CR>
