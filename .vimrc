@@ -35,10 +35,10 @@ Plug 'scrooloose/nerdtree'
 " i want to use it for sniplet of html structure
  Plug 'mattn/emmet-vim'
 
-" tmuxline Plug
-Plug 'edkolev/tmuxline.vim'
+ " tmuxline
+"  Plug 'edkolev/tmuxline.vim'
 
- " Seamless switch between vim and tmux splits
+" Seamless switch between vim and tmux splits
 Plug 'christoomey/vim-tmux-navigator'
 
 " SnipMate
@@ -119,6 +119,9 @@ Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 " Hybrib material theme
 Plug 'kristijanhusak/vim-hybrid-material'
+
+" typescript syntax highlight
+Plug 'leafgarland/typescript-vim'
 
 
 " --------------------------------------------------------------

@@ -26,7 +26,7 @@ set colorcolumn=100
 let mapleader="," 
 
 " set tab length to 4 columns
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Always indent/outdent to nearest tabstop
 set shiftround
@@ -67,6 +67,7 @@ set synmaxcol=900
 
 " set fold method to syntax
 set fdm=indent
+set foldlevel=0
 
 " set case insensitive search
 set ignorecase

@@ -7,7 +7,7 @@ export ZSH=/Users/aakashsigdel/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mh"
+ZSH_THEME="mh_aakash"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -107,18 +107,6 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias lh="ls -d .*"
 alias ip="ifconfig | grep 192"
-eval "$(thefuck-alias)"
-eval "$(thefuck-alias FUCK)"
-# ============
-
-# ============
-# git aliases
-# ============
-alias g="git"
-alias gs="git status"
-alias gb="git branch"
-alias gbr="git branch -r"
-alias gl="git l"
 # ============
 
 # ============
