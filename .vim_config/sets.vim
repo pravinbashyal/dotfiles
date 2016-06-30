@@ -26,7 +26,7 @@ set colorcolumn=100
 let mapleader="," 
 
 " set tab length to 4 columns
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Always indent/outdent to nearest tabstop
 set shiftround
@@ -65,7 +65,7 @@ syntax sync maxlines=240
 " don't highlight lines longer than 800 chars
 set synmaxcol=900
 
-" set fold method to syntax
+" set fold method to indent *fdm=syntax makes vim slow
 set fdm=indent
 set foldlevel=0
 
@@ -81,5 +81,16 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " spell check
 setlocal spell spelllang=en_us
+
+" status bar
+set statusline=%F%m%r%h%w\  "fullpath and status modified sign
+set statusline+=\ %y "filetype
+set statusline+=\ %{fugitive#statusline()}
+
+" assume the /g flag on :s substitutions to replace all matches in a line
+set gdefault
+
+" set trail to tabs
+set list listchars=tab:»·,trail:·
 
 "}}}

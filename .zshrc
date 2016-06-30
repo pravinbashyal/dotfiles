@@ -1,7 +1,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/aakashsigdel/.oh-my-zsh
+export ZSH=/Users/aakash/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -51,7 +51,7 @@ ZSH_THEME="mh_aakash"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew npm)
+plugins=(git brew npm zsh-syntax-highlighting)
 
 plugins=(fasd)
 
@@ -107,6 +107,7 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias lh="ls -d .*"
 alias ip="ifconfig | grep 192"
+alias mux="tmuxinator"
 # ============
 
 # ============
@@ -128,7 +129,6 @@ set -o vi
 # 10ms timeout for key sequences
 KEYTIMEOUT=1
 
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.bin/tmuxinator.zsh
 export EDITOR=nvim
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -138,5 +138,8 @@ bindkey '^r' history-incremental-search-backward
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export NVM_DIR="/Users/aakashsigdel/.nvm"
+export NVM_DIR="/Users/aakash/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# load rbenv
+eval "$(rbenv init -)"

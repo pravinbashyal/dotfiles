@@ -1,5 +1,5 @@
-source ~/.vim_config/sets.vim
-source ~/.vim_config/keymap.vim
+source ~/.dotfiles/.vim_config/sets.vim
+source ~/.dotfiles/.vim_config/keymap.vim
 
 " All Plugins {{{
 " "========================================================
@@ -15,15 +15,9 @@ Plug 'pangloss/vim-javascript'
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
 
-" Window-swap plugin
-Plug 'wesQ3/vim-windowswap'
-
-" eighties-vim
-Plug 'justincampbell/vim-eighties'
-
 " vim-airline
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'bling/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 " highlight ending html tag when pointing to the start
 Plug 'gregsexton/MatchTag'
@@ -31,43 +25,26 @@ Plug 'gregsexton/MatchTag'
 " NerdTree Plug
 Plug 'scrooloose/nerdtree'
 
-" Emmet.vim Plug for i don't know expanding html tags i guess
-" i want to use it for sniplet of html structure
- Plug 'mattn/emmet-vim'
-
- " tmuxline
-"  Plug 'edkolev/tmuxline.vim'
+" Emmet for vim
+Plug 'mattn/emmet-vim'
 
 " Seamless switch between vim and tmux splits
 Plug 'christoomey/vim-tmux-navigator'
 
 " SnipMate
-  Plug 'MarcWeber/vim-addon-mw-utils'
-  Plug 'tomtom/tlib_vim'
-  Plug 'garbas/vim-snipmate'
-
-  Plug 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
 " fugitive
 Plug 'tpope/vim-fugitive'
 
 " fzf async replacement of ctrlP
- Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   
-" CtrlP
-Plug 'kien/ctrlp.vim'
-
-" CtrlP-funky ctrlp for finding function calls
-Plug 'tacahiroy/ctrlp-funky'
-
-" gundo for visual undo
-Plug 'sjl/gundo.vim'
-
 " goyo distraction free coding
 Plug 'junegunn/goyo.vim'
-
-" vimproc used by neocomplete
-Plug 'Shougo/vimproc.vim'
 
 " youcompleteme
 Plug 'Valloric/YouCompleteMe'
@@ -87,9 +64,6 @@ Plug 'terryma/vim-smooth-scroll'
 " VIM Hard mode disable all micro movment and bunch of other stuffs
 " Plug 'wikitopian/hardmode'
 
-" Vim lib syntax
-" Plug 'othree/javascript-libraries-syntax.vim'
-
 " HTML5 Plug
 " Plug 'othree/html5.vim'
 
@@ -102,27 +76,15 @@ Plug 'tpope/vim-surround'
 " syntastic
 Plug 'scrooloose/syntastic'
 
-" base16 colorschemes
+" colors for vim
 Plug 'chriskempson/base16-vim'
-
-" fukurokujopro colorscheme
 Plug 'nemesit/vim-colors-fukurokujopro'
-
-" gruvbox colorscheme
 Plug 'morhetz/gruvbox'
-
-" Solorazied theme
 Plug 'altercation/vim-colors-solarized'
-
-" dracula theme
 Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-
-" Hybrib material theme
 Plug 'kristijanhusak/vim-hybrid-material'
-
-" typescript syntax highlight
-Plug 'leafgarland/typescript-vim'
-
+Plug 'ajh17/Spacegray.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " --------------------------------------------------------------
 call plug#end()
@@ -132,8 +94,8 @@ filetype on
 
 "}}}
 
-source ~/.vim_config/general.vim
-source ~/.vim_config/style.vim
-source ~/.vim_config/plugin_settings.vim
+source ~/.dotfiles/.vim_config/general.vim
+source ~/.dotfiles/.vim_config/style.vim
+source ~/.dotfiles/.vim_config/plugin_settings.vim
 
 " vim:foldmethod=marker:foldlevel=0
