@@ -15,6 +15,27 @@ Plug 'pangloss/vim-javascript'
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
 
+"ctrlP
+Plug 'ctrlpvim/ctrlp.vim'
+
+"vim for rails
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-projectionist'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'tpope/vim-bundler'
+
+" neocomplete
+Plug 'Shougo/neocomplete.vim'
+
+"camelcase
+Plug 'bkad/CamelCaseMotion'
+
+"ack
+Plug 'mileszs/ack.vim'
+
 " vim-airline
 " Plug 'bling/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -32,25 +53,25 @@ Plug 'mattn/emmet-vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " SnipMate
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
+"Plug 'honza/vim-snippets'
 
 " fugitive
 Plug 'tpope/vim-fugitive'
 
 " fzf async replacement of ctrlP
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   
 " goyo distraction free coding
 Plug 'junegunn/goyo.vim'
 
 " youcompleteme
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 " tern for vim
-Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
+"Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
 
 " Ag for vim
 Plug 'rking/ag.vim'
@@ -85,6 +106,7 @@ Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'ajh17/Spacegray.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'flazz/vim-colorschemes'
 
 " --------------------------------------------------------------
 call plug#end()
@@ -97,5 +119,6 @@ filetype on
 source ~/.dotfiles/.vim_config/general.vim
 source ~/.dotfiles/.vim_config/style.vim
 source ~/.dotfiles/.vim_config/plugin_settings.vim
+source ~/.dotfiles/.vim_config/manual_function.vim
 
 " vim:foldmethod=marker:foldlevel=0

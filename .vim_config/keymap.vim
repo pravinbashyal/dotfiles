@@ -41,7 +41,7 @@ noremap <F5> :source $MYVIMRC<CR>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
 
 " nerdtree mapping
 map <leader><CR> :NERDTreeToggle<CR>
@@ -56,11 +56,34 @@ noremap <leader>gs :Gstatus<CR>
 " Ctrlp-funky mappings
 nnoremap <Leader>p :CtrlPFunky<Cr>
 let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_map = '<c-f>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " fzf mapping
 noremap <C-p> :FZF<CR>
 
 " fix for iterm under mac
 nnoremap <BS> :TmuxNavigateLeft<CR>
+
+"fugitive mapping
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>ge :Gedit<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gw :Gwrite<CR><CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gm :Gmove<Space>
+nnoremap <space>gb :Git branch<Space>
+nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gpl :Dispatch! git pull<CR>
+
+"camelcase
+omap i,w <Plug>CamelCaseMotion_iw
+xmap i,w <Plug>CamelCaseMotion_iw
 
 "}}}

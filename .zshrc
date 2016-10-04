@@ -1,13 +1,11 @@
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/aakash/.oh-my-zsh
+  export ZSH=/home/pravin/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mh_aakash"
+ZSH_THEME="mh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,17 +49,12 @@ ZSH_THEME="mh_aakash"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew npm zsh-syntax-highlighting)
-
-plugins=(fasd)
-
-
+plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/opt/genymobile/genymotion:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/opt/local/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,65 +74,40 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias stageInsurance="ssh deploy@52.0.76.119"
 
-# ======================================================================
-# ===================     ALIASES     ==================================
-# ======================================================================
+# nvim alias
+alias vi="vim"
+# alias vim="nvim"
+alias copy="xclip -selection c $1"
 
-# ============
-# vim aliases
-# ============
-alias vi="nvim"
-alias vim="nvim"
-# ============
-
-# ============
-# tmux aliases
-# ============
-alias tmux="tmux -2"
-# ============
-
-# ============
-# others
-# ============
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias lh="ls -d .*"
-alias ip="ifconfig | grep 192"
-alias mux="tmuxinator"
-# ============
-
-# ============
-# react-native aliases
-# ============
-alias rn5='react-native run-ios --simulator="iPhone 5"'
-alias rn5s='react-native run-ios --simulator="iPhone 5s"'
-alias rn6='react-native run-ios'
-alias rn6s='react-native run-ios --simulator="iPhone 6s"'
-# ============
-
-# ======================================================================
-# ===================     ALIASES-END     ==============================
-# ======================================================================
-
-# set VI mode
+# set vi mode
 set -o vi
 
-# 10ms timeout for key sequences
-KEYTIMEOUT=1
+# set termainal to 256 color
+export TERM=xterm-256color
+export PATH="$PATH:$HOME/.npm-packages/bin"
+export ANDROID_HOME="/home/pravin/Android/Sdk"
+export GRADLE_USER_HOME="/home/pravin/.gradle"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+GEM_HOME='/home/pravin/.gems'
+export PATH="$HOME/.linuxbrew/bin:$PATH"
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export PATH="$PATH:$HOME/bin" # Add RVM to PATH for scripting
+export XDG_DATA_DIRS="/home/pravin/.linuxbrew/share:$XDG_DATA_DIRS"
+export XDG_DATA_DIRS="/home/pravin/.linuxbrew/share:$XDG_DATA_DIRS"
+export INSURANCE_DATABASE_PASSWORD="saakaajula"
+export JRUBY_OPTS="--dev -J-Xms512m -J-Xmx512m -J-XX:+UseConcMarkSweepGC -J-XX:-UseGCOverheadLimit -J-XX:+CMSClassUnloadingEnabled"
+export EDITOR='vim'
 source ~/.bin/tmuxinator.zsh
-export EDITOR=nvim
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-# ctrl + r in vim mode in shell
-bindkey '^r' history-incremental-search-backward
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NVM_DIR="/Users/aakash/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# load rbenv
-eval "$(rbenv init -)"

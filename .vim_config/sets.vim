@@ -21,6 +21,7 @@ set undodir=$HOME/.vim/undo
 
 " set right side column
 set colorcolumn=100
+highlight ColorColumn ctermbg=8
 
 " leader is comma
 let mapleader="," 
@@ -92,5 +93,16 @@ set gdefault
 
 " set trail to tabs
 set list listchars=tab:»·,trail:·
+
+runtime macros/matchit.vim
+
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
+
+set nospell
+
+set directory^=$HOME/.vim/tmp//
 
 "}}}

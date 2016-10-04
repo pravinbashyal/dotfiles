@@ -26,10 +26,13 @@
 " Emmet Options {{{
 " Enabling just for html and css
   let g:user_emmet_install_global = 1
+  let g:user_emmet_mode='n'
+  let g:user_emmet_leader_key='<tab>'
   autocmd FileType html,css,js EmmetInstall
 "}}}
 
 "CtrlP settings {{{
+  let g:ctrlp_map = '<c-f>'
   if exists("g:ctrlp_user_command")
     unlet g:ctrlp_user_command
   endif
@@ -99,3 +102,14 @@
 "}}}
 
 " vim:foldmethod=marker:foldlevel=0
+
+" vim rails
+set nocompatible
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+
+" neo complete settings
+source ~/.dotfiles/.vim_config/neocomplete-settings.vim
+
+"camelcase 
+call camelcasemotion#CreateMotionMappings('<leader>')
