@@ -104,5 +104,8 @@ endif
 set nospell
 
 set directory^=$HOME/.vim/tmp//
+" XML folding
+let g:xml_syntax_folding=1
+au FileType html setlocal foldmethod=manual
 
 "}}}

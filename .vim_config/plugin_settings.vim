@@ -59,6 +59,8 @@
 "}}}
 
 " NerdTree settings {{{
+  set splitright
+  set splitbelow
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "}}}
 
@@ -113,3 +115,4 @@ source ~/.dotfiles/.vim_config/neocomplete-settings.vim
 
 "camelcase 
 call camelcasemotion#CreateMotionMappings('<leader>')
+
