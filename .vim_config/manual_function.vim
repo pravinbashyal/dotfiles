@@ -1,5 +1,4 @@
 
-
 " ruby map functions
 function! GenerateController(input)
   execute "Rgenerate controller ".a:input

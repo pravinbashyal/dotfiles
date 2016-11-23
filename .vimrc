@@ -27,6 +27,9 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-bundler'
 
+"slim
+Plug 'slim-template/vim-slim'
+
 " neocomplete
 Plug 'Shougo/neocomplete.vim'
 
@@ -61,9 +64,12 @@ Plug 'christoomey/vim-tmux-navigator'
 " fugitive
 Plug 'tpope/vim-fugitive'
 
+" unimpaired
+Plug 'tpope/vim-unimpaired'
+
 " fzf async replacement of ctrlP
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  
+
 " goyo distraction free coding
 Plug 'junegunn/goyo.vim'
 
