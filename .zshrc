@@ -142,3 +142,6 @@ source ~/.bin/tmuxinator.zsh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
 
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
