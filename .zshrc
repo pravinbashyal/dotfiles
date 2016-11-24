@@ -145,3 +145,6 @@ source ~/.bin/tmuxinator.zsh
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
