@@ -30,4 +30,10 @@ function! DestroyMailer(input)
   " execute "NERDTreeFind ".a:input."_controller.rb"
 endfunction
 
+function! Copy(str)
+  normal gv"+y
+  let result = getreg("+")
+endfunction
+
+
 source ~/.dotfiles/.vim_config/function_calls.vim

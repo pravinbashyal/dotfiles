@@ -96,7 +96,13 @@ omap i,w <Plug>CamelCaseMotion_iw
 xmap i,w <Plug>CamelCaseMotion_iw
 
 " buffer
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" copy to clipboard
+vnoremap <space>co :call Copy(@*)<CR>
+
+" source vimrc
+nnoremap <space>w :source ~/.vimrc<CR>
 
 "}}}

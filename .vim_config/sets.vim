@@ -24,7 +24,7 @@ set colorcolumn=100
 highlight ColorColumn ctermbg=8
 
 " leader is comma
-let mapleader="," 
+let mapleader=","
 
 " set tab length to 4 columns
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -61,13 +61,13 @@ set nocursorcolumn
 set nocursorline
 " scan min lines for highlight
 syntax sync minlines=100
-" scan max lines for highlight 
+" scan max lines for highlight
 syntax sync maxlines=240
 " don't highlight lines longer than 800 chars
 set synmaxcol=900
 
 " set fold method to indent *fdm=syntax makes vim slow
-set fdm=indent
+set fdm=syntax
 set foldlevel=0
 
 " set case insensitive search
@@ -107,5 +107,6 @@ set directory^=$HOME/.vim/tmp//
 " XML folding
 let g:xml_syntax_folding=1
 au FileType html setlocal foldmethod=manual
+
 
 "}}}
