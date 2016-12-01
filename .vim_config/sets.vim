@@ -66,7 +66,7 @@ syntax sync maxlines=240
 " don't highlight lines longer than 800 chars
 set synmaxcol=900
 
-" set fold method to indent *fdm=syntax makes vim slow
+" fold
 set fdm=syntax
 set foldlevel=0
 

@@ -6,9 +6,6 @@ imap <C-c> <CR><Esc>O
 noremap j gj
 noremap k gk
 
-" turn off searh highlight
-nnoremap <leader>n :nohlsearch<CR>
-
 " spaec open/closes fold
 nnoremap <space> za
 
@@ -95,12 +92,17 @@ nnoremap <leader>q :Bclose <CR>
 omap i,w <Plug>CamelCaseMotion_iw
 xmap i,w <Plug>CamelCaseMotion_iw
 
+" toggle search highlight
+nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+
+
 " buffer
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
 " copy to clipboard
 vnoremap <space>co :call Copy(@*)<CR>
+
 
 " source vimrc
 nnoremap <space>w :source ~/.vimrc<CR>

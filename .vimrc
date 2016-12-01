@@ -19,6 +19,7 @@ Plug 'mxw/vim-jsx'
 Plug 'ctrlpvim/ctrlp.vim'
 
 "vim for rails
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
@@ -102,6 +103,9 @@ Plug 'tpope/vim-surround'
 
 " syntastic
 Plug 'scrooloose/syntastic'
+
+" fold
+Plug 'Konfekt/FastFold'
 
 " colors for vim
 Plug 'chriskempson/base16-vim'

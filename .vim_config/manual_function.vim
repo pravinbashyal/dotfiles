@@ -35,5 +35,4 @@ function! Copy(str)
   let result = getreg("+")
 endfunction
 
-
 source ~/.dotfiles/.vim_config/function_calls.vim
