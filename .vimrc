@@ -28,6 +28,18 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-bundler'
 
+" vim hard mode
+Plug 'wikitopian/hardmode'
+
+" buffer management
+"{{
+  " Plug 'jlanzarotta/bufexplorer'
+  Plug 'jeetsukumaran/vim-buffergator'
+" }}
+
+"vim repeat
+Plug 'tpope/vim-repeat'
+
 "slim
 Plug 'slim-template/vim-slim'
 

@@ -28,9 +28,6 @@ nnoremap gp `[v`]
 " set syntax highlight scan from start
 "noremap <F5>:syntax sync fromstart<CR>
 
-" toggle vim hard mode
-" nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
 " source vimrc
 noremap <F5> :source $MYVIMRC<CR>
 
@@ -42,13 +39,6 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
 
 " nerdtree mapping
 map <leader><CR> :NERDTreeToggle<CR>
-
-" synstastic mapping
-map <leader>c :SyntasticCheck<CR>
-
-" Fugitive mapping
-" map Gstatus
-noremap <leader>gs :Gstatus<CR>
 
 " Ctrlp-funky mappings
 nnoremap <Leader>p :CtrlPFunky<Cr>
@@ -89,11 +79,14 @@ nnoremap <space>o :only<CR>
 nnoremap <space>r :bufdo e<CR>
 nnoremap <leader>q :Bclose <CR>
 "camelcase
-omap i,w <Plug>CamelCaseMotion_iw
-xmap i,w <Plug>CamelCaseMotion_iw
+omap ,iw <Plug>CamelCaseMotion_iw
+xmap ,iw <Plug>CamelCaseMotion_iw
 
 " toggle search highlight
 nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+
+" toggle hard mode
+nnoremap <leader>H <Esc>:call ToggleHardMode()<CR>
 
 
 " buffer
@@ -106,5 +99,8 @@ vnoremap <space>co :call Copy(@*)<CR>
 
 " source vimrc
 nnoremap <space>w :source ~/.vimrc<CR>
+
+" buffergator
+nnoremap <leader>f :BuffergatorToggle<CR>
 
 "}}}

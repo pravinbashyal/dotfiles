@@ -108,5 +108,10 @@ set directory^=$HOME/.vim/tmp//
 let g:xml_syntax_folding=1
 au FileType html setlocal foldmethod=manual
 
+" set mouse mode on
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 "}}}
+
