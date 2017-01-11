@@ -83,7 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias stageInsurance="ssh deploy@52.0.76.119"
 alias insurance="tmuxinator start insurance"
 
 # nvim alias
