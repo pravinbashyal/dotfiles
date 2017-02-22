@@ -85,7 +85,14 @@ source $ZSH/oh-my-zsh.sh
 #
 alias stageInsurance="ssh deploy@52.0.76.119"
 alias insurance="tmuxinator start insurance"
+alias leavelogic="tmuxinator start leavelogic"
+alias cl='clear'
 
+
+# leave logic integration
+
+alias integration="ssh ubuntu@52.10.73.90"
+alias integration1="ssh ubuntu@52.26.93.110"
 # nvim alias
 alias vi="vim"
 # alias vim="nvim"
@@ -124,6 +131,7 @@ if [ $UID -eq 0 ]; then NCOLOR="green"; else NCOLOR="blue"; fi
 
 # prompt
 PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} %{$fg[red]%}%1~%{$reset_color%}]%(!.#.$) '
+# PROMPT=' %(!.#.$) '
 RPROMPT='$(git_prompt_info)'
 
 # git theming

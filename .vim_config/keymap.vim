@@ -88,7 +88,6 @@ nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."
 " toggle hard mode
 nnoremap <leader>H <Esc>:call ToggleHardMode()<CR>
 
-
 " buffer
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -102,5 +101,9 @@ nnoremap <space>w :source ~/.vimrc<CR>
 
 " buffergator
 nnoremap <leader>f :BuffergatorToggle<CR>
+
+" move lines up down
+ nmap t :m +1<CR>
+ nmap T :m -2<CR>
 
 "}}}

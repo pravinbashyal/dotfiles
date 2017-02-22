@@ -27,6 +27,14 @@ Plug 'tpope/vim-projectionist'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-bundler'
+" Plug 'szw/vim-tags'
+
+"tags
+" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'
+
+" coffee script
+Plug 'kchmck/vim-coffee-script'
 
 " vim hard mode
 Plug 'wikitopian/hardmode'
@@ -43,8 +51,12 @@ Plug 'tpope/vim-repeat'
 "slim
 Plug 'slim-template/vim-slim'
 
-" neocomplete
-Plug 'Shougo/neocomplete.vim'
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+
+" indentaion move
+Plug 'michaeljsmith/vim-indent-object'
 
 "camelcase
 Plug 'bkad/CamelCaseMotion'

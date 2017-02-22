@@ -35,6 +35,9 @@ set shiftround
 " Indent to correct location with tab
 set smarttab
 
+"easy tag
+" let g:easytags_async
+
 " copy the indentation of previous line if autoindent doesn't know what to do
 set copyindent
 
@@ -112,6 +115,9 @@ au FileType html setlocal foldmethod=manual
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
+
+" indent for slim
+autocmd FileType slim setlocal foldmethod=indent
 
 "}}}
 

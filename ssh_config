@@ -1,0 +1,16 @@
+Host whitehat
+  Hostname bitbucket.org
+  IdentityFile ~/.ssh/whitehat
+  User bitbucket
+
+Host staging.leavelogic.com
+  Hostname staging.leavelogic.com
+  IdentityFile ~/.ssh/whitehat
+  User ubuntu
+
+Host pravin
+  Hostname bitbucket.org
+  IdentityFile ~/.ssh/id_rsa
+  User bitbucket
+
+ForwardX11 yes

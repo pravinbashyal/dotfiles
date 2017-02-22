@@ -4,7 +4,7 @@
 
 " vim-airline configuration {{{
   set laststatus=2 "enable status line
-  let g:airline#extensions#tabline#enabled = 1 "enable powerline fonts 
+  let g:airline#extensions#tabline#enabled = 1 "enable powerline fonts
   let g:airline_powerline_fonts = 1 "enable powerline fonts
   let g:airline#extensions#tagbar#enabled = 0 "speeds up the load time by disabling tagbar integration
   let g:airline#extensions#tabline#fnamemod = ':.'
@@ -104,15 +104,16 @@
 "}}}
 
 " vim:foldmethod=marker:foldlevel=0
+"
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
 
 " vim rails
 set nocompatible
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
 
-" neo complete settings
-source ~/.dotfiles/.vim_config/neocomplete-settings.vim
-
-"camelcase 
+"camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
 
