@@ -142,6 +142,12 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'flazz/vim-colorschemes'
 
+"save vim session
+Plug 'tpope/vim-obsession'
+
+" howdoi
+" Plug 'laurentgoudet/vim-howdoi'
+
 " --------------------------------------------------------------
 call plug#end()
 filetype plugin indent on    " required

@@ -59,6 +59,8 @@ nnoremap <space>gc :Gcommit -v -q<CR>
 nnoremap <space>gt :Gcommit -v -q %:p<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <space>dg :diffget<CR>
+nnoremap <space>dg[ :diffget //2<CR>
+nnoremap <space>dg] :diffget //3<CR>
 nnoremap <space>dp :diffput<CR>
 nnoremap <space>du :diffupdate<CR>
 nnoremap <space>ge :Gedit<CR>
@@ -77,7 +79,7 @@ nnoremap <space>gpl :Dispatch! git pull<CR>
 " buffer
 nnoremap <space>o :only<CR>
 nnoremap <space>r :bufdo e<CR>
-nnoremap <leader>q :Bclose <CR>
+nnoremap <leader>q :bd <CR>
 "camelcase
 omap ,iw <Plug>CamelCaseMotion_iw
 xmap ,iw <Plug>CamelCaseMotion_iw
@@ -105,5 +107,8 @@ nnoremap <leader>f :BuffergatorToggle<CR>
 " move lines up down
  nmap t :m +1<CR>
  nmap T :m -2<CR>
+
+" only
+nnoremap <leader>o :only<CR>
 
 "}}}

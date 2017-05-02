@@ -114,6 +114,11 @@ set nocompatible
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
 
+"use ag
+if executable('ag')
+ let g:ackprg = 'ag --vimgrep'
+endif
+
 "camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
 
