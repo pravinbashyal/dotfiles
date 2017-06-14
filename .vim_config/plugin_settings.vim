@@ -84,8 +84,6 @@
   let g:syntastic_auto_loc_list = 1
   let g:syntastic_check_on_wq = 0
   let g:syntastic_javascript_checkers = ['standard']
-  let g:syntastic_mode_map = {
-        \ "mode": "passive" }
 " }}}
 
 " tern settings {{{
@@ -113,6 +111,22 @@ let g:deoplete#enable_at_startup = 1
 set nocompatible
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
+
+" syntastic typescript
+let g:tsuquyomi_single_quote_import = 1
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['typescript']}
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_w = 1
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 
 "use ag
 if executable('ag')

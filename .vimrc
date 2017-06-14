@@ -126,7 +126,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 
 " syntastic
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 " fold
 Plug 'Konfekt/FastFold'
@@ -147,6 +147,17 @@ Plug 'tpope/vim-obsession'
 
 " howdoi
 " Plug 'laurentgoudet/vim-howdoi'
+
+" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc' " for tsuquyomi
+
+" javascript
+Plug 'galooshi/vim-import-js'
+
+" easygrep
+Plug 'dkprice/vim-easygrep'
 
 " --------------------------------------------------------------
 call plug#end()

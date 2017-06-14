@@ -119,5 +119,9 @@ map <ScrollWheelDown> <C-E>
 " indent for slim
 autocmd FileType slim setlocal foldmethod=indent
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+
 "}}}
 

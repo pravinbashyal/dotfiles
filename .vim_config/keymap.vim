@@ -90,6 +90,10 @@ nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."
 " toggle hard mode
 nnoremap <leader>H <Esc>:call ToggleHardMode()<CR>
 
+" set read only
+nnoremap <Space>R :set nomodifiable<CR>
+nnoremap <Space>W :set modifiable<CR>
+
 " buffer
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -110,5 +114,17 @@ nnoremap <leader>f :BuffergatorToggle<CR>
 
 " only
 nnoremap <leader>o :only<CR>
+
+" tab completion
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+
+" tsuquyomi
+nnoremap <leader>ti :TsuImport <CR>
+nnoremap <leader>tf :TsuReferences <CR>
+nnoremap <leader>tF :TsuImplementation <CR>
+
+" syntastic
+nnoremap <leader>tl :SyntasticCheck tslint<CR>
+nnoremap <leader>tm :SyntasticToggleMode <CR>
 
 "}}}

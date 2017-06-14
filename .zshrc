@@ -1,12 +1,21 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
+export ZSH=/Users/pravin/.oh-my-zsh
 
-export OUR_PACER_USERNAME="bj1612"
-export OUR_PACER_PASSWORD="6XwRuuF&"
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# aliases
+alias vim='/usr/local/bin/vim'
+alias vi='/usr/local/bin/vim'
+
+# reverse search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,40 +61,38 @@ export OUR_PACER_PASSWORD="6XwRuuF&"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 
-# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/opt/genymobile/genymotion:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-alias integration="ssh ubuntu@52.10.73.90"
-alias integration1="ssh ubuntu@52.26.93.110"
-alias elasticsearch_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
-export PATH=/opt/local/lib/postgresql93/bin:$PATH
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-alias postgres_start='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql93-server/postgresql93-server.wrapper start';
-alias postgres_stop='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql93-server/postgresql93-server.wrapper stop';
-alias postgres_restart='sudo /opt/local/etc/LaunchDaemons/org.macports.postgresql93-server/postgresql93-server.wrapper restart';
-# nvim alias
-alias vi="vim"
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# set vi mode
-set -o vi
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-export INSURANCE_DATABASE_PASSWORD="saakaajula"
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# if superuser make the username green
-if [ $UID -eq 0 ]; then NCOLOR="green"; else NCOLOR="blue"; fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/opt/local/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
-
-set -o vi
-bindkey '^R' history-incremental-search-backward
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-export PATH="/opt/local/libexec/qt5/bin/qmake:$PATH"
-export PATH="/opt/local/libexec/qt5/bin:$PATH"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+set -o vi
