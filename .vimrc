@@ -18,23 +18,9 @@ Plug 'mxw/vim-jsx'
 "ctrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-"vim for rails
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-projectionist'
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'tpope/vim-bundler'
-" Plug 'szw/vim-tags'
-
 "tags
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
-
-" coffee script
-Plug 'kchmck/vim-coffee-script'
 
 " vim hard mode
 Plug 'wikitopian/hardmode'
@@ -47,13 +33,6 @@ Plug 'wikitopian/hardmode'
 
 "vim repeat
 Plug 'tpope/vim-repeat'
-
-"slim
-Plug 'slim-template/vim-slim'
-
-" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 
 " indentaion move
 Plug 'michaeljsmith/vim-indent-object'
@@ -86,8 +65,14 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plug 'garbas/vim-snipmate'
 "Plug 'honza/vim-snippets'
 
+" merginal
+Plug 'idanarye/vim-merginal'
+
 " fugitive
 Plug 'tpope/vim-fugitive'
+
+" git log
+Plug 'vim-scripts/git-log'
 
 " unimpaired
 Plug 'tpope/vim-unimpaired'
@@ -104,11 +89,9 @@ Plug 'junegunn/goyo.vim'
 " tern for vim
 "Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
 
-" Ag for vim
-Plug 'rking/ag.vim'
-
 " tcomment for vim
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 
 " smooth scroll Plug
 Plug 'terryma/vim-smooth-scroll'
@@ -153,11 +136,30 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc' " for tsuquyomi
 
-" javascript
+" javascript import
 Plug 'galooshi/vim-import-js'
 
 " easygrep
 Plug 'dkprice/vim-easygrep'
+
+" dispatch
+Plug 'tpope/vim-dispatch'
+
+" for test
+Plug 'geekjuice/vim-mocha'
+Plug 'janko-m/vim-test'
+
+" vim tmux runner
+Plug 'christoomey/vim-tmux-runner'
+
+" neoformat
+" Plug 'sbdchd/neoformat'
+
+" vim-prettier
+Plug 'mitermayer/vim-prettier'
+
+" vim-markdown
+Plug 'plasticboy/vim-markdown'
 
 " --------------------------------------------------------------
 call plug#end()

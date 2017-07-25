@@ -5,6 +5,11 @@ function! GenerateController(input)
   " execute "NERDTreeFind ".a:input."_controller.rb"
 endfunction
 
+function! TabWidth(input)
+  execute "set tabstop=".a:input
+  execute "set shiftwidth=".a:input
+endfunction
+
 function! GenerateModel(input)
   execute "Rgenerate model ".a:input
   " execute "NERDTreeFind ".a:input."_controller.rb"

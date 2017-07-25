@@ -96,13 +96,25 @@
   imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
   smap <C-J> <Plug>snipMateNextOrTrigger
 " }}}
+"
+
+" test vim
+function! JimMorrison(cmd)
+  " echo 'It works! Command for running tests: ' . a:cmd
+  " echo " export NODE_ENV='test';".a:cmd
+  :VtrOpenRunner
+  call VtrSendCommand("export NODE_ENV='test';".a:cmd)
+endfunction
+
+let g:test#custom_strategies = {'jimmorrison': function('JimMorrison')}
+let g:test#strategy = 'jimmorrison'
+let test#javascript#minitest#file_pattern = 'Test.js'
 
 " YouCompeleteMe settings {{{
   set completeopt-=preview
 "}}}
 
 " vim:foldmethod=marker:foldlevel=0
-"
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
@@ -128,6 +140,18 @@ let g:syntastic_check_on_w = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
+" surround
+let b:surround_103 = "{/* \r */}"
+
+" neoformat on save
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre * undojoin | Neoformat
+" augroup END
+
+" let g:neoformat_enabled_typescript = ['prettier']
+
+
 "use ag
 if executable('ag')
  let g:ackprg = 'ag --vimgrep'
@@ -136,3 +160,38 @@ endif
 "camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
 
+" vim prettier
+" max line lengh that prettier will wrap on
+" {{
+  " let g:prettier#config#print_width = 80
+
+  " number of spaces per indentation level
+  let g:prettier#config#tab_width = 2
+
+  " use tabs over spaces
+  let g:prettier#config#use_tabs = 'false'
+
+  " print semicolons
+  let g:prettier#config#semi = 'false'
+
+  " single quotes over double quotes
+  let g:prettier#config#single_quote = 'true'
+
+  " print spaces between brackets
+  let g:prettier#config#bracket_spacing = 'true'
+
+  " put > on the last line instead of new line
+  let g:prettier#config#jsx_bracket_same_line = 'false'
+
+  " none|es5|all
+  let g:prettier#config#trailing_comma = 'es5'
+
+  " flow|babylon|typescript|postcss|json|graphql
+  let g:prettier#config#parser = 'flow'
+
+  " when running at every change you may want to disable quickfix
+  " let g:prettier#quickfix_enabled = 0
+
+  let g:prettier#autoformat = 0
+  autocmd BufWritePre *.ts,*.tsx,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+" }}

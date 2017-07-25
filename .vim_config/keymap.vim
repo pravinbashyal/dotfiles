@@ -46,8 +46,11 @@ let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" fzf mapping
-noremap <C-p> :FZF<CR>
+" ack mapping
+noremap <C-p> :Ack<Space>
+
+"tab width
+nnoremap <space>tw :Tw<space>
 
 " fix for iterm under mac
 nnoremap <BS> :TmuxNavigateLeft<CR>
@@ -71,15 +74,23 @@ nnoremap <space>gll :Glog -- %<CR>:bot copen<CR>
 nnoremap <space>gL :Glog -10 -- <CR>:bot copen<CR>
 nnoremap <space>gp :Ggrep<Space>
 nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gb :Git branch<Space>
+nnoremap <space>gb :MerginalToggle <CR>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
+" vim test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " buffer
 nnoremap <space>o :only<CR>
 nnoremap <space>r :bufdo e<CR>
 nnoremap <leader>q :bd <CR>
+
 "camelcase
 omap ,iw <Plug>CamelCaseMotion_iw
 xmap ,iw <Plug>CamelCaseMotion_iw
@@ -108,10 +119,6 @@ nnoremap <space>w :source ~/.vimrc<CR>
 " buffergator
 nnoremap <leader>f :BuffergatorToggle<CR>
 
-" move lines up down
- nmap t :m +1<CR>
- nmap T :m -2<CR>
-
 " only
 nnoremap <leader>o :only<CR>
 
@@ -119,12 +126,30 @@ nnoremap <leader>o :only<CR>
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " tsuquyomi
-nnoremap <leader>ti :TsuImport <CR>
-nnoremap <leader>tf :TsuReferences <CR>
-nnoremap <leader>tF :TsuImplementation <CR>
+nnoremap <space>ti :TsuImport <CR>
+nnoremap <space>tf :TsuReferences <CR>
+nnoremap <space>tF :TsuImplementation <CR>
 
 " syntastic
-nnoremap <leader>tl :SyntasticCheck tslint<CR>
-nnoremap <leader>tm :SyntasticToggleMode <CR>
+" nnoremap <leader>tl :SyntasticCheck tslint<CR>
+nnoremap <space>tm :SyntasticToggleMode <CR>
+nnoremap <space>tR :TsuRenameSymbol<CR>
+nnoremap <C-n> :lnext<CR>
+nnoremap <C-b> :lprev<CR>
 
+" map ' to ``
+nnoremap ' `
+vnoremap ' `
+
+vnoremap <space>gc :normal yssg <CR>
+
+nnoremap <space>jc yss * <CR> yss / <CR> yss { <CR>
+
+" vim tmux runner
+nnoremap <space>f :VtrFocusRunner<CR>
+
+" log
+let g:GITLOG_default_mode = 2
+map <silent> <f7> :call GITLOG_ToggleWindows()<cr>
+map <silent> <f5> :call GITLOG_FlipWindows()<cr>
 "}}}

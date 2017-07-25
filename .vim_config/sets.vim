@@ -3,6 +3,9 @@
 " and equals to 1 tells vim to check last line for the settings
 set modelines=1
 set nocompatible              " be iMproved, required
+" if $TMUX == ''
+  set clipboard+=unnamed
+" endif
 filetype off                  " required
 syntax on
 
