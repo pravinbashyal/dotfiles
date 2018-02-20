@@ -126,9 +126,11 @@ nnoremap <leader>o :only<CR>
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " tsuquyomi
-nnoremap <space>ti :TsuImport <CR>
-nnoremap <space>tf :TsuReferences <CR>
-nnoremap <space>tF :TsuImplementation <CR>
+" nnoremap <space>ti :TsuImport <CR>
+nnoremap <space>tf :TSSreferences<CR>
+nnoremap <space>td :TSSdefsplit<CR>
+nnoremap <space>tp :TSSdefpreview<CR>
+" nnoremap <space>tF :TsuImplementation <CR>
 
 " syntastic
 " nnoremap <leader>tl :SyntasticCheck tslint<CR>
@@ -147,6 +149,11 @@ nnoremap <space>jc yss * <CR> yss / <CR> yss { <CR>
 
 " vim tmux runner
 nnoremap <space>f :VtrFocusRunner<CR>
+
+" ALE
+nnoremap <C-]> :ALEGoToDefinitionInTab <CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " log
 let g:GITLOG_default_mode = 2

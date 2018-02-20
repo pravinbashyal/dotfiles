@@ -127,6 +127,10 @@ let g:rubycomplete_rails = 1
 " syntastic typescript
 let g:tsuquyomi_single_quote_import = 1
 let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_shortest_import_path = 1
+let g:tsuquyomi_single_quote_import = 1
+let g:tsuquyomi_use_vimproc = 1
+let g:tsuquyomi_completion_detail = 1
 let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -140,17 +144,12 @@ let g:syntastic_check_on_w = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
+autocmd FileType typescript nmap <buffer> <space>h : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript setlocal completeopt+=menu,preview
+let g:tsuquyomi_completion_detail = 1
+
 " surround
 let b:surround_103 = "{/* \r */}"
-
-" neoformat on save
-" augroup fmt
-"   autocmd!
-"   autocmd BufWritePre * undojoin | Neoformat
-" augroup END
-
-" let g:neoformat_enabled_typescript = ['prettier']
-
 
 "use ag
 if executable('ag')
@@ -160,38 +159,58 @@ endif
 "camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
 
+let g:ale_fixers = {
+\   'typescript': ['prettier'],
+\   'typescript.tsx': ['prettier'],
+\   'javascript.jsx': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_typescript_prettier_use_local_config = 1
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
+
+" Enable completion where available.
+let g:ale_completion_enabled = 0
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
 " vim prettier
 " max line lengh that prettier will wrap on
-" {{
-  " let g:prettier#config#print_width = 80
+" " {{
+"   let g:prettier#config#print_width = 80
 
-  " number of spaces per indentation level
-  let g:prettier#config#tab_width = 2
+"   " number of spaces per indentation level
+"   let g:prettier#config#tab_width = 2
 
-  " use tabs over spaces
-  let g:prettier#config#use_tabs = 'false'
+"   " use tabs over spaces
+"   let g:prettier#config#use_tabs = 'false'
 
-  " print semicolons
-  let g:prettier#config#semi = 'false'
+"   " print semicolons
+"   let g:prettier#config#semi = 'false'
 
-  " single quotes over double quotes
-  let g:prettier#config#single_quote = 'true'
+"   " single quotes over double quotes
+"   let g:prettier#config#single_quote = 'true'
 
-  " print spaces between brackets
-  let g:prettier#config#bracket_spacing = 'true'
+"   " print spaces between brackets
+"   let g:prettier#config#bracket_spacing = 'true'
 
-  " put > on the last line instead of new line
-  let g:prettier#config#jsx_bracket_same_line = 'false'
+"   " put > on the last line instead of new line
+"   let g:prettier#config#jsx_bracket_same_line = 'false'
 
-  " none|es5|all
-  let g:prettier#config#trailing_comma = 'es5'
+"   " none|es5|all
+"   let g:prettier#config#trailing_comma = 'es5'
 
-  " flow|babylon|typescript|postcss|json|graphql
-  let g:prettier#config#parser = 'flow'
+"   " flow|babylon|typescript|postcss|json|graphql
+"   let g:prettier#config#parser = 'flow'
 
-  " when running at every change you may want to disable quickfix
-  " let g:prettier#quickfix_enabled = 0
+"   let g:loaded#prettier = 0
 
-  let g:prettier#autoformat = 0
-  autocmd BufWritePre *.ts,*.tsx,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+"   " when running at every change you may want to disable quickfix
+"   " let g:prettier#quickfix_enabled = 0
+
+"   let g:prettier#autoformat = 0
+"   autocmd BufWritePre *.ts,*.tsx,*.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 " }}

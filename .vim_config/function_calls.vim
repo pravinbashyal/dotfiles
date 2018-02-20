@@ -7,3 +7,5 @@
 " com -nargs=1 RL call DestroyMailer(<f-args>)
 
 com -nargs=1 Tw call TabWidth(<f-args>)
+com -nargs=1 Nfh call NewFileHere(<f-args>)
+com -nargs=* CprettierSet call PrettierSet(<f-args>)

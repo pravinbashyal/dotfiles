@@ -68,6 +68,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " merginal
 Plug 'idanarye/vim-merginal'
 
+" asyncrun
+Plug 'skywind3000/asyncrun.vim'
+
 " fugitive
 Plug 'tpope/vim-fugitive'
 
@@ -109,7 +112,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 
 " syntastic
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " fold
 Plug 'Konfekt/FastFold'
@@ -125,6 +128,9 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'flazz/vim-colorschemes'
 
+" editor
+Plug 'terryma/vim-multiple-cursors'
+
 "save vim session
 Plug 'tpope/vim-obsession'
 
@@ -133,8 +139,16 @@ Plug 'tpope/vim-obsession'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
-Plug 'Shougo/vimproc' " for tsuquyomi
+" Plug 'Quramy/tsuquyomi'
+" Plug 'Shougo/vimproc' " for tsuquyomi
+Plug 'ervandew/supertab'
+Plug 'clausreinke/typescript-tools.vim', { 'do': 'npm install' }
+
+" -----------------------
+filetype plugin on
+au BufRead,BufNewFile *.ts		setlocal filetype=typescript
+set rtp+=/Users/pravin/.vim/plugged/typescript-tools.vim/
+" ======================
 
 " javascript import
 Plug 'galooshi/vim-import-js'
@@ -156,10 +170,21 @@ Plug 'christoomey/vim-tmux-runner'
 " Plug 'sbdchd/neoformat'
 
 " vim-prettier
-Plug 'mitermayer/vim-prettier'
+" Plug 'mitermayer/vim-prettier'
+
+" ALE
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
 
 " vim-markdown
 Plug 'plasticboy/vim-markdown'
+
+" R
+Plug 'jalvesaq/Nvim-R'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-rmarkdown'
+
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 
 " --------------------------------------------------------------
 call plug#end()

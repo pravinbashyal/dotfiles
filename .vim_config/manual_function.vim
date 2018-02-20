@@ -8,6 +8,13 @@ endfunction
 function! TabWidth(input)
   execute "set tabstop=".a:input
   execute "set shiftwidth=".a:input
+  execute "let g:prettier#config#tab_width=".a:input
+endfunction
+
+function! PrettierSet(arg1, arg2)
+  let command = "let g:prettier#config#".a:arg1."='".a:arg2."'"
+  echo command
+  execute command
 endfunction
 
 function! GenerateModel(input)
@@ -38,6 +45,12 @@ endfunction
 function! Copy(str)
   normal gv"+y
   let result = getreg("+")
+endfunction
+
+function! NewFileHere(str)
+  let currentDirectoryArray = split(expand('%:p'), '/')[0:-2]
+  let currentDirectory = join(currentDirectoryArray, '/').'/'
+  echo currentDirectory
 endfunction
 
 function! Smart_TabComplete()
