@@ -80,6 +80,9 @@ Plug 'vim-scripts/git-log'
 " unimpaired
 Plug 'tpope/vim-unimpaired'
 
+" inline evaluation
+Plug 'metakirby5/codi.vim'
+
 " fzf async replacement of ctrlP
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -139,8 +142,8 @@ Plug 'tpope/vim-obsession'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
-" Plug 'Quramy/tsuquyomi'
-" Plug 'Shougo/vimproc' " for tsuquyomi
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc', {'do': 'make'} " for tsuquyomi
 Plug 'ervandew/supertab'
 Plug 'clausreinke/typescript-tools.vim', { 'do': 'npm install' }
 
@@ -183,6 +186,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'jalvesaq/Nvim-R'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-rmarkdown'
+
+" csv
+Plug 'chrisbra/csv.vim'
 
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 

@@ -111,7 +111,7 @@ let g:test#strategy = 'jimmorrison'
 let test#javascript#minitest#file_pattern = 'Test.js'
 
 " YouCompeleteMe settings {{{
-  set completeopt-=preview
+  " set completeopt-=preview
 "}}}
 
 " vim:foldmethod=marker:foldlevel=0
@@ -120,18 +120,18 @@ let test#javascript#minitest#file_pattern = 'Test.js'
 let g:deoplete#enable_at_startup = 1
 
 " vim rails
-set nocompatible
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_rails = 1
+" set nocompatible
+" let g:rubycomplete_buffer_loading = 1
+" let g:rubycomplete_rails = 1
 
 " syntastic typescript
 let g:tsuquyomi_single_quote_import = 1
 let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_shortest_import_path = 1
+let g:tsuquyomi_shortest_import_path = 0
 let g:tsuquyomi_single_quote_import = 1
 let g:tsuquyomi_use_vimproc = 1
-let g:tsuquyomi_completion_detail = 1
-let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
+" let g:tsuquyomi_completion_detail = 1
+" let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -145,8 +145,8 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
 autocmd FileType typescript nmap <buffer> <space>h : <C-u>echo tsuquyomi#hint()<CR>
-autocmd FileType typescript setlocal completeopt+=menu,preview
-let g:tsuquyomi_completion_detail = 1
+" autocmd FileType typescript setlocal completeopt+=menu,preview
+" let g:tsuquyomi_completion_detail = 1
 
 " surround
 let b:surround_103 = "{/* \r */}"
@@ -159,20 +159,31 @@ endif
 "camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
 
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
+
+let g:ale_sign_column_always = 1
+
 let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescript.tsx': ['prettier'],
 \   'javascript.jsx': ['prettier'],
 \   'css': ['prettier'],
 \}
+
+let g:ale_linters = {
+\   'typescript': ['tsserver', 'tslint'],
+\   'typescript.tsx': ['tsserver', 'tslint'],
+\   'javascript.jsx': ['tsserver', 'tslint'],
+\}
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_typescript_prettier_use_local_config = 1
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
 let g:ale_fix_on_save = 1
-
-" Enable completion where available.
-let g:ale_completion_enabled = 0
 
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
