@@ -1,12 +1,12 @@
 syntax enable
 set background=dark
 " colorscheme solarized
-color PaperColor
+" color PaperColor
 " color solarized
 " color base16-ocean
 " colorscheme gruvbox
 " color dracula
-" colorscheme hybrid_material
+colorscheme hybrid
 " color folds
 " hi Folded ctermbg=Black
 " hi MatchParen ctermbg=238

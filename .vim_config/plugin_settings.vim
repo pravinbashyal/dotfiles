@@ -27,7 +27,7 @@
 " Enabling just for html and css
   let g:user_emmet_install_global = 1
   let g:user_emmet_mode='n'
-  let g:user_emmet_leader_key='<tab>'
+  " let g:user_emmet_leader_key='<tab>'
   autocmd FileType html,css,js EmmetInstall
 "}}}
 
@@ -93,8 +93,8 @@
 
 " snipmate settings {{{
   "to prevent clash with youcompleteme, change snippet trigger
-  imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-  smap <C-J> <Plug>snipMateNextOrTrigger
+  " imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+  " smap <C-J> <Plug>snipMateNextOrTrigger
 " }}}
 "
 
@@ -124,12 +124,6 @@ let g:deoplete#enable_at_startup = 1
 " let g:rubycomplete_buffer_loading = 1
 " let g:rubycomplete_rails = 1
 
-" syntastic typescript
-let g:tsuquyomi_single_quote_import = 1
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_shortest_import_path = 0
-let g:tsuquyomi_single_quote_import = 1
-let g:tsuquyomi_use_vimproc = 1
 " let g:tsuquyomi_completion_detail = 1
 " let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
 set statusline+=%#warningmsg#
@@ -157,7 +151,7 @@ if executable('ag')
 endif
 
 "camelcase
-call camelcasemotion#CreateMotionMappings('<leader>')
+" call camelcasemotion#CreateMotionMappings('<leader>')
 
 let g:user_emmet_settings = {
 \  'javascript' : {
@@ -171,13 +165,14 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescript.tsx': ['prettier'],
 \   'javascript.jsx': ['prettier'],
+\   'javascript': ['prettier'],
 \   'css': ['prettier'],
 \}
 
 let g:ale_linters = {
-\   'typescript': ['tsserver', 'tslint'],
-\   'typescript.tsx': ['tsserver', 'tslint'],
-\   'javascript.jsx': ['tsserver', 'tslint'],
+\   'typescript': ['tsserver', 'eslint'],
+\   'typescript.tsx': ['tsserver', 'eslint'],
+\   'javascript.jsx': ['tsserver', 'eslint'],
 \}
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_typescript_prettier_use_local_config = 1
@@ -188,40 +183,25 @@ let g:ale_fix_on_save = 1
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
-" vim prettier
-" max line lengh that prettier will wrap on
-" " {{
-"   let g:prettier#config#print_width = 80
+" filetype plugin indent on
+" imap <Tab> <C-R>=UltiSnips#ExpandSnippets()<CR>
 
-"   " number of spaces per indentation level
-"   let g:prettier#config#tab_width = 2
-
-"   " use tabs over spaces
-"   let g:prettier#config#use_tabs = 'false'
-
-"   " print semicolons
-"   let g:prettier#config#semi = 'false'
-
-"   " single quotes over double quotes
-"   let g:prettier#config#single_quote = 'true'
-
-"   " print spaces between brackets
-"   let g:prettier#config#bracket_spacing = 'true'
-
-"   " put > on the last line instead of new line
-"   let g:prettier#config#jsx_bracket_same_line = 'false'
-
-"   " none|es5|all
-"   let g:prettier#config#trailing_comma = 'es5'
-
-"   " flow|babylon|typescript|postcss|json|graphql
-"   let g:prettier#config#parser = 'flow'
-
-"   let g:loaded#prettier = 0
-
-"   " when running at every change you may want to disable quickfix
-"   " let g:prettier#quickfix_enabled = 0
-
-"   let g:prettier#autoformat = 0
-"   autocmd BufWritePre *.ts,*.tsx,*.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 " }}
+"
+" UltiSnips {{{
+  let g:UltiSnipsUsePythonVersion=3
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+  let g:UltiSnipsSnippetsDir = $HOME."/.dotfiles/UltiSnips"
+  let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.dotfiles/UltiSnips']
+  let g:UltiSnipsEnableSnipMate = 0
+  let g:UltiSnipsEditSplit="vertical"
+"}}}
+
+  " In your VIMRC
+  lua require'colorizer'.setup({ '*'; css = { rgb_fn = true; };  html = { no_names = true; } })
+
+call deoplete#custom#option('sources', {
+\ '_': ['ale', 'foobar'],
+\})
