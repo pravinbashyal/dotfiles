@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/pravin/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -107,20 +107,13 @@ set -o vi
 # reverse search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/pravin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pravin/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/pravin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pravin/google-cloud-sdk/completion.zsh.inc'; fi
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH=$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:$PATH
 
-source /Users/pravin/Library/Preferences/org.dystroy.broot/launcher/bash/br
 unsetopt autopushd
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -131,3 +124,10 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/user/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/user/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/user/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/user/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
