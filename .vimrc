@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 " lexima replacement for deliMate
 Plug 'cohama/lexima.vim'
 
-Plug 'heavenshell/vim-jsdoc'
+Plug '/kkoomen/vim-doge'
 
 " javascript Plugs
 Plug 'pangloss/vim-javascript'
@@ -17,7 +17,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " vim hard mode
-Plug 'wikitopian/hardmode'
+" Plug 'wikitopian/hardmode'
 
 " buffer management
 "{{
@@ -79,6 +79,8 @@ Plug 'Konfekt/FastFold'
 " Plug 'nemesit/vim-colors-fukurokujopro'
 " Plug 'morhetz/gruvbox'
 " Plug 'altercation/vim-colors-solarized'
+" Plug 'chase/focuspoint-vim'
+Plug 'charliesbot/night-owl.vim'
 " Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 " Plug 'kristijanhusak/vim-hybrid-material'
 " Plug 'ajh17/Spacegray.vim'
@@ -86,11 +88,12 @@ Plug 'Konfekt/FastFold'
 " Plug 'flazz/vim-colorschemes'
 
 " typescript
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'ervandew/supertab'
 Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/vim-lsp'
 " Plug 'ryanolsonx/vim-lsp-typescript'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Or latest tag
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
@@ -133,12 +136,13 @@ Plug 'honza/vim-snippets'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+  " Plug 'Shougo/deoplete.nvim'
+  " Plug 'roxma/nvim-yarp'
+  " Plug 'roxma/vim-hug-neovim-rpc'
 endif
+let g:deoplete#enable_at_startup = 1
 
 Plug 'severin-lemaignan/vim-minimap'
 
@@ -146,11 +150,15 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" Rust
+Plugin 'rust-lang/rust.vim'
+
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 
 " --------------------------------------------------------------
 call plug#end()
-filetype plugin indent on    " required
+syntax enable
+filetype plugin indent on
 filetype on
 filetype plugin on
 " ==============================================================

@@ -116,9 +116,6 @@ let test#javascript#minitest#file_pattern = 'Test.js'
 
 " vim:foldmethod=marker:foldlevel=0
 
-"deoplete
-let g:deoplete#enable_at_startup = 1
-
 " vim rails
 " set nocompatible
 " let g:rubycomplete_buffer_loading = 1
@@ -137,6 +134,7 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_check_on_w = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+
 
 autocmd FileType typescript nmap <buffer> <space>h : <C-u>echo tsuquyomi#hint()<CR>
 " autocmd FileType typescript setlocal completeopt+=menu,preview
@@ -199,9 +197,21 @@ let g:airline#extensions#ale#enabled = 1
   let g:UltiSnipsEditSplit="vertical"
 "}}}
 
+" vim-doge
+let g:doge_mapping="<leader>dg"
+
+"CocVim {{{
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <silent><expr> <TAB>
+		  \ pumvisible() ? "\<C-n>" :
+		  \ <SID>check_back_space() ? "\<TAB>" :
+		  \ coc#refresh()
+
+"}}}
+
   " In your VIMRC
   lua require'colorizer'.setup({ '*'; css = { rgb_fn = true; };  html = { no_names = true; } })
-
-call deoplete#custom#option('sources', {
-\ '_': ['ale', 'foobar'],
-\})

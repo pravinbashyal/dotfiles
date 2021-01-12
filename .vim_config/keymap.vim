@@ -182,6 +182,8 @@ nnoremap <leader>ii :CocAction <cr>
 xmap <space>a  <Plug>(coc-codeaction-selected)
 nmap <space>a  <Plug>(coc-codeaction-selected)
 nnoremap <leader>rf :CocCommand workspace.renameCurrentFile <CR>
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Use K to show documentation in preview window
 nnoremap K :call <SID>show_documentation()<CR>

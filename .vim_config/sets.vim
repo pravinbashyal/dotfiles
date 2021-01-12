@@ -123,7 +123,6 @@ map <ScrollWheelDown> <C-E>
 autocmd FileType slim setlocal foldmethod=indent
 
 filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
 
 "}}}
