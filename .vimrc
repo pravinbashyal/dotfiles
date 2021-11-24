@@ -1,5 +1,5 @@
-source ~/.dotfiles/.vim_config/sets.vim
-source ~/.dotfiles/.vim_config/keymap.vim
+source ~/.vim_config/sets.vim
+source ~/.vim_config/keymap.vim
 
 " All Plugins {{{
 " "========================================================
@@ -15,6 +15,8 @@ Plug 'pangloss/vim-javascript'
 
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
+
+Plug 'jparise/vim-graphql'
 
 " vim hard mode
 " Plug 'wikitopian/hardmode'
@@ -125,7 +127,7 @@ Plug 'Shougo/vimproc'
 Plug 'Shougo/vimshell.vim'
 
 
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
@@ -151,7 +153,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Rust
-Plugin 'rust-lang/rust.vim'
+" Plugin 'rust-lang/rust.vim'
 
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 
@@ -165,10 +167,27 @@ filetype plugin on
 
 "}}}
 
-source ~/.dotfiles/.vim_config/general.vim
-source ~/.dotfiles/.vim_config/style.vim
-source ~/.dotfiles/.vim_config/plugin_settings.vim
-source ~/.dotfiles/.vim_config/manual_function.vim
+source ~/.vim_config/general.vim
+source ~/.vim_config/style.vim
+source ~/.vim_config/plugin_settings.vim
+
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+" Add truecolor support
+" set-option -ga terminal-overrides ",xterm-256color:Tc"
+" Default terminal is 256 colors
+" set -g default-terminal "screen-256color"
+
 
 " vim:foldmethod=marker:foldlevel=0
 autocmd BufNewFile,BufRead *.js setlocal filetype=javascript.jsx
