@@ -72,7 +72,8 @@
 "}}}
 
 " fugitive.vim {{{
-  set diffopt+=vertical
+  " set diffopt+=vertical
+  let g:fugitive_pty = 0
 " }}}
 
 " syntastic Settings {{{
@@ -214,4 +215,4 @@ let g:doge_mapping="<leader>dg"
 "}}}
 
   " In your VIMRC
-  lua require'colorizer'.setup({ '*'; css = { rgb_fn = true; };  html = { no_names = true; } })
+  " lua require'colorizer'.setup({ '*'; css = { rgb_fn = true; };  html = { no_names = true; } })

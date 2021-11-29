@@ -57,7 +57,7 @@ nnoremap <BS> :TmuxNavigateLeft<CR>
 
 "fugitive mapping
 nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gs :Git<CR>
 nnoremap <space>gc :Gcommit -v -q<CR>
 nnoremap <space>gt :Gcommit -v -q %:p<CR>
 nnoremap <space>gd :Gdiff<CR>
@@ -178,6 +178,8 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>hh <Plug>(coc-type-definition)
 nmap <C-]> <Plug>(coc-definition)
 nmap <leader>r <Plug>(coc-references)
+nmap <C-nn> <Plug>(coc-diagnostic-next-error)
+nmap <C-pp> <Plug>(coc-diagnostic-prev-error)
 nnoremap <leader>ii :CocAction <cr>
 xmap <space>a  <Plug>(coc-codeaction-selected)
 nmap <space>a  <Plug>(coc-codeaction-selected)
