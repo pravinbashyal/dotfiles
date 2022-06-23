@@ -95,7 +95,6 @@ Plug 'ervandew/supertab'
 Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/vim-lsp'
 " Plug 'ryanolsonx/vim-lsp-typescript'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Or latest tag
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
@@ -137,6 +136,8 @@ Plug 'honza/vim-snippets'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 if has('nvim')
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -151,6 +152,10 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 
 " Rust
 " Plugin 'rust-lang/rust.vim'
