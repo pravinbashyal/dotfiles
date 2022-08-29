@@ -44,7 +44,7 @@ map <leader><CR> :NERDTreeToggle<CR>
 noremap <c-f> :FZF<CR>
 
 " ack mapping
-noremap <C-p> :Ack<Space>
+noremap <leader><space> :Ack<Space>
 
 let g:SuperTabMappingForward = '<c-n>'
 let g:SuperTabMappingBackward = '<c-N>'
@@ -56,9 +56,9 @@ nnoremap <space>tw :Tw<space>
 nnoremap <BS> :TmuxNavigateLeft<CR>
 
 "fugitive mapping
-nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gs :Git<CR>
 nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gn :Git commit --no-verify<CR>
 nnoremap <space>gt :Gcommit -v -q %:p<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <space>dg :diffget<CR>
@@ -136,8 +136,6 @@ nnoremap <space>tp :TSSdefpreview<CR>
 " nnoremap <leader>tl :SyntasticCheck tslint<CR>
 " nnoremap <space>tm :SyntasticToggleMode <CR>
 " nnoremap <space>tR :TsuRenameSymbol<CR>
-nnoremap <C-n> :lnext<CR>
-nnoremap <C-b> :lprev<CR>
 
 " map ' to ``
 nnoremap ' `
@@ -178,14 +176,19 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>hh <Plug>(coc-type-definition)
 nmap <C-]> <Plug>(coc-definition)
 nmap <leader>r <Plug>(coc-references)
-nmap <C-nn> <Plug>(coc-diagnostic-next-error)
-nmap <C-pp> <Plug>(coc-diagnostic-prev-error)
-nnoremap <leader>ii :CocAction <cr>
+nmap <C-n> <Plug>(coc-diagnostic-next-error)
+nmap <C-p> <Plug>(coc-diagnostic-prev-error)
+nmap <leader>ii <plug>(coc-codeaction-line)
 xmap <space>a  <Plug>(coc-codeaction-selected)
 nmap <space>a  <Plug>(coc-codeaction-selected)
 nnoremap <leader>rf :CocCommand workspace.renameCurrentFile <CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" markdown preview
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " Use K to show documentation in preview window
 nnoremap K :call <SID>show_documentation()<CR>
