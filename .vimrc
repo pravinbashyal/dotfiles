@@ -19,7 +19,7 @@ Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 
 " vim hard mode
-" Plug 'wikitopian/hardmode'
+Plug 'wikitopian/hardmode'
 
 " buffer management
 "{{
@@ -202,4 +202,4 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 set swapfile
 set dir=~/.swap-files
-
+call HardMode()
