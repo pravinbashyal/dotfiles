@@ -103,10 +103,6 @@ alias vi="nvim"
 
 set -o vi
 
-# reverse search
-bindkey -v
-bindkey '^R' history-incremental-search-backward
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -130,3 +126,7 @@ if [ -f '/Users/user/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/user/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/user/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# reverse search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
